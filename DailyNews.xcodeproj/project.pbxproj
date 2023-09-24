@@ -52,8 +52,8 @@
 		7C6EDB4F2AB4272200B36AF8 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		7C6EDB512AB46E5600B36AF8 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		7C6EDB562AB4714100B36AF8 /* UIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFactory.swift; sourceTree = "<group>"; };
-		7C7743D82ABD8C8E00826C4E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		7C7743D92ABD8DB500826C4E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		7C7743DC2AC0406700826C4E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,7 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				7C6EDB382AAF522D00B36AF8 /* Info.plist */,
-				7C7743D82ABD8C8E00826C4E /* Config.xcconfig */,
+				7C7743DC2AC0406700826C4E /* Config.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -322,7 +322,7 @@
 /* Begin XCBuildConfiguration section */
 		7C6EDB392AAF522D00B36AF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C7743D82ABD8C8E00826C4E /* Config.xcconfig */;
+			baseConfigurationReference = 7C7743DC2AC0406700826C4E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -383,7 +383,7 @@
 		};
 		7C6EDB3A2AAF522D00B36AF8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C7743D82ABD8C8E00826C4E /* Config.xcconfig */;
+			baseConfigurationReference = 7C7743DC2AC0406700826C4E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -438,7 +438,7 @@
 		};
 		7C6EDB3C2AAF522D00B36AF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C7743D82ABD8C8E00826C4E /* Config.xcconfig */;
+			baseConfigurationReference = 7C7743DC2AC0406700826C4E /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,7 +471,7 @@
 		};
 		7C6EDB3D2AAF522D00B36AF8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C7743D82ABD8C8E00826C4E /* Config.xcconfig */;
+			baseConfigurationReference = 7C7743DC2AC0406700826C4E /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
