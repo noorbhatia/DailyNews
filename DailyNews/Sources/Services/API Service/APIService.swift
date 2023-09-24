@@ -9,23 +9,34 @@ import Foundation
 
 
 protocol APIServiceProtocol {
-    func request<T: Codable>(_ path: String,params: [String:String]?, type: T.Type, completion: @escaping (Result<T,Error>) -> Void)
+    func request<T: Codable>(_ path: String,params: inout [String:String]?, type: T.Type, completion: @escaping (Result<T,Error>) -> Void)
 }
 
-final class APIService:APIServiceProtocol{
+final class APIService: APIServiceProtocol{
     static let shared = APIService()
     let jsonDecoder = JSONDecoder()
-    //    let baseURL = "https://newsapi.org/v2/everything?q=bitcoin&apiKey=606ef364dd194b25832635de85a59769"
+    
     let apiURLScheme = "https"
     let apiHost = "newsapi.org"
     private init() {}
     
-    func request<T: Codable>(_ path: String,params: [String:String]? = nil, type: T.Type, completion: @escaping (Result<T,Error>) -> Void) {
+    func request<T: Codable>(_ path: String, params: inout [String:String]?, type: T.Type, completion: @escaping (Result<T,Error>) -> Void) {
         
         var components = URLComponents()
         components.scheme = apiURLScheme
         components.host = apiHost
         components.path = "/v2/\(path)"
+        
+        var apiKey:String {
+            do {
+                return try Configuration.value(for: .apiKey)
+            } catch {
+               fatalError("\(error)")
+            }
+        }
+        
+        params?["apiKey"] = apiKey
+        print(apiKey)
         if let parameters = params {
             components.setQueryItems(with: parameters)
         }

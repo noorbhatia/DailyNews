@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class NewsCollectionViewCell: UICollectionViewCell {
     lazy var label: UILabel = {
@@ -27,6 +28,17 @@ class NewsCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
+    lazy var image: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(systemName: "photo")
+        imageView.tintColor = .black
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 10
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -38,6 +50,7 @@ class NewsCollectionViewCell: UICollectionViewCell {
     
     func configureCell(_ item: Article){
         label.text = item.title
+        image.sd_setImage(with: URL(string: item.urlToImage ?? ""))
     }
 }
 
@@ -45,6 +58,7 @@ private extension NewsCollectionViewCell {
     func setup (){
         self.contentView.addSubview(containerView)
         containerView.addSubview(label)
+        containerView.addSubview(image)
         configureLayouts()
     }
     
@@ -54,10 +68,17 @@ private extension NewsCollectionViewCell {
             containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10),
             containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            image.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
+            image.trailingAnchor.constraint(equalTo: label.leadingAnchor, constant: -10),
+            image.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10),
+            image.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -10),
+            //            image.heightAnchor.constraint(equalToConstant: 110),
+            image.widthAnchor.constraint(equalToConstant: 100),
             label.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10),
-            label.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10),
+//            label.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 10),
             label.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10),
             label.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -10),
+            
             
         ])
     }

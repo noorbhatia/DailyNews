@@ -27,6 +27,7 @@
 		7C6EDB522AB46E5600B36AF8 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6EDB512AB46E5600B36AF8 /* Enums.swift */; };
 		7C6EDB572AB4714100B36AF8 /* UIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6EDB562AB4714100B36AF8 /* UIFactory.swift */; };
 		7C7743D62ABC4F7E00826C4E /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7C7743D52ABC4F7E00826C4E /* SDWebImage */; };
+		7C7743DA2ABD8DB500826C4E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7743D92ABD8DB500826C4E /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		7C6EDB4F2AB4272200B36AF8 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		7C6EDB512AB46E5600B36AF8 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		7C6EDB562AB4714100B36AF8 /* UIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFactory.swift; sourceTree = "<group>"; };
+		7C7743D82ABD8C8E00826C4E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		7C7743D92ABD8DB500826C4E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +90,6 @@
 				7C6EDB412AB1BF1C00B36AF8 /* Sources */,
 				7C6EDB3E2AB1BD3800B36AF8 /* Resources */,
 				7C6EDB352AAF522D00B36AF8 /* LaunchScreen.storyboard */,
-				7C6EDB382AAF522D00B36AF8 /* Info.plist */,
 			);
 			path = DailyNews;
 			sourceTree = "<group>";
@@ -95,6 +97,7 @@
 		7C6EDB3E2AB1BD3800B36AF8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7C7743D72ABD8C5900826C4E /* Config */,
 				7C6EDB532AB46F0A00B36AF8 /* Fonts */,
 				7C6EDB3F2AB1BD4D00B36AF8 /* Assets */,
 			);
@@ -126,6 +129,7 @@
 				7C6EDB552AB4712D00B36AF8 /* UI Factory */,
 				7C6EDB432AB1C02900B36AF8 /* AssetColor.swift */,
 				7C6EDB512AB46E5600B36AF8 /* Enums.swift */,
+				7C7743D92ABD8DB500826C4E /* Configuration.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -194,6 +198,15 @@
 				7C6EDB562AB4714100B36AF8 /* UIFactory.swift */,
 			);
 			path = "UI Factory";
+			sourceTree = "<group>";
+		};
+		7C7743D72ABD8C5900826C4E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				7C6EDB382AAF522D00B36AF8 /* Info.plist */,
+				7C7743D82ABD8C8E00826C4E /* Config.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +302,7 @@
 				7C6EDB2D2AAF522800B36AF8 /* SceneDelegate.swift in Sources */,
 				7C6EDB522AB46E5600B36AF8 /* Enums.swift in Sources */,
 				7C6EDB502AB4272200B36AF8 /* NewsViewModel.swift in Sources */,
+				7C7743DA2ABD8DB500826C4E /* Configuration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +322,7 @@
 /* Begin XCBuildConfiguration section */
 		7C6EDB392AAF522D00B36AF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C7743D82ABD8C8E00826C4E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -368,6 +383,7 @@
 		};
 		7C6EDB3A2AAF522D00B36AF8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C7743D82ABD8C8E00826C4E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -422,6 +438,7 @@
 		};
 		7C6EDB3C2AAF522D00B36AF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C7743D82ABD8C8E00826C4E /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -429,7 +446,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8FJPU4SM32;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DailyNews/Info.plist;
+				INFOPLIST_FILE = DailyNews/Resources/Config/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -454,6 +471,7 @@
 		};
 		7C6EDB3D2AAF522D00B36AF8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C7743D82ABD8C8E00826C4E /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -461,7 +479,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8FJPU4SM32;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DailyNews/Info.plist;
+				INFOPLIST_FILE = DailyNews/Resources/Config/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

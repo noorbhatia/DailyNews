@@ -29,7 +29,8 @@ final class NewsViewModel: NewsViewModelProtocol {
     }
     
     func fetchNews() {
-        apiService.request("top-headlines", params: ["country":"in","apiKey": "606ef364dd194b25832635de85a59769"], type: NewsModel.self, completion: completion)
+        var params: [String : String]? = ["country":"in"]
+        apiService.request("top-headlines", params: &params, type: NewsModel.self, completion: completion)
     }
     
     private func completion(result: Result<NewsModel, Error>){
